@@ -1,0 +1,91 @@
+
+      
+        body {
+            text-align: center;
+            padding-top: 3em;
+            background-color: gray;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            width:100%;
+            height:100vh;
+        }
+        input {
+            display: none;
+        }
+        div {
+            margin: 1em;
+            display: inline-block;
+        }
+        .checkbox,
+        .radio {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            cursor: pointer;
+            background-color: #000;
+            border: 1px solid #000;
+            border-top-color: #262626;
+            border-right-color: #404040;
+            border-bottom-color: #404040;
+            border-left-color: #262626;
+            border-radius: 5px;
+            z-index: 0;
+            font-size: 30px;
+            font-weight: 900;
+            transition: all 500ms;
+        }
+        .checkbox:hover,
+        .radio:hover {
+            border-color: #97ffff;
+            box-shadow: 0 0 20px 0 rgba(100, 200, 255, 0.75);
+        }
+        .checkbox:before,
+        .checkbox:after,
+        .radio:before,
+        .radio:after {
+            content: "";
+            position: absolute;
+            opacity: 0;
+        }
+        .checkbox:before,
+        .radio:before {
+            content: "✓";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            padding-top: .25em;
+            color: #000;
+            z-index: 100;
+        }
+        .checkbox:after,
+        .radio:after {
+            top: 4px;
+            left: 4px;
+            background-color: #64ffff;
+            box-shadow: 0 0 20px 0 rgba(100, 200, 255, 0.75);
+            border-radius: 3px;
+            width: 42px;
+            height: 42px;
+            z-index: 10;
+            transition: all 500ms;
+        }
+      
+        
+        #mycheckbox:checked + label,
+        #myradio:checked + label {
+            border-color: #444;
+        }
+        #mycheckbox:checked + label:before,
+        #mycheckbox:checked + label:after,
+        #myradio:checked + label:before,
+        #myradio:checked + label:after {
+            opacity: 1;
+        }
+        #mycheckbox:checked + label:hover,
+        #myradio:checked + label:hover {
+            border-color: #97ffff;
+        }
